@@ -1,0 +1,6 @@
+#this is inventory
+[controller]
+192.168.56.132
+
+[compute]
+192.168.56.133
