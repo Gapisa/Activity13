@@ -1,0 +1,17 @@
+---
+- name: update package
+  apt:
+    update_cache: yes
+    force_apt_get: yes
+
+
+- name: Install OpenStack packages
+  apt:
+    name: nova-compute
+    state: latest
+
+- name: Ensure OpenStack service is running and enabled
+  service:
+    name: nova-compute
+    state: started
+    enabled: true

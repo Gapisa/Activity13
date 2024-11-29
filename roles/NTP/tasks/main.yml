@@ -1,0 +1,17 @@
+---
+- name: update package
+  apt:
+    update_cache: yes
+    force_apt_get: yes
+
+- name: Install NTP
+  apt:
+    name: chrony=4.5-1ubuntu4.2
+    state: latest
+
+- name: Ensure NTP service is running and enabled
+  service:
+    name: chrony
+    state: started
+    enabled: true
+
